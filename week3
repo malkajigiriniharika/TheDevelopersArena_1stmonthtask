@@ -1,0 +1,30 @@
+Theory Summary
+
+Learned about:
+
+NumPy: arrays, broadcasting, mathematical operations.
+
+Pandas: DataFrame and Series manipulation, grouping, filtering, and aggregation.
+These libraries make data analysis and cleaning more efficient.
+
+Client Project: Clean and Aggregate Dataset
+import pandas as pd
+
+# Sample dataset
+data = {'Name': ['A', 'B', 'C', 'A', 'D'],
+        'Age': [25, 30, None, 25, 40],
+        'Salary': [50000, 60000, 55000, 50000, None]}
+
+df = pd.DataFrame(data)
+
+# Remove missing values
+df_clean = df.dropna()
+
+# Remove duplicates
+df_clean = df_clean.drop_duplicates()
+
+# Calculate average salary
+avg_salary = df_clean['Salary'].mean()
+
+print("Cleaned Data:\n", df_clean)
+print("Average Salary:", avg_salary)
