@@ -1,0 +1,21 @@
+Theory Summary
+
+Learned about:
+
+Lists, Tuples, Sets, Dictionaries: storing and organizing data.
+
+Functions & Lambda Functions: modularize code.
+
+Recursion: functions calling themselves.
+
+List Comprehension: concise looping for transformations.
+# Calculate average temperature from user input
+temps = []
+n = int(input("Enter number of days: "))
+
+for i in range(n):
+    t = float(input(f"Enter temperature for day {i+1}: "))
+    temps.append(t)
+
+avg_temp = sum(temps) / len(temps)
+print(f"Average Temperature: {avg_temp:.2f}°C")
