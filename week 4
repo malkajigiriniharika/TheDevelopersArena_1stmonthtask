@@ -1,0 +1,33 @@
+Theory Summary
+
+Learned how to visualize data using:
+
+Matplotlib: line, bar, histogram, scatter plots.
+
+Seaborn: advanced visualizations like heatmaps, pairplots, and distribution plots.
+Visualization helps uncover trends and correlations in data.
+
+#Client Project: Mini Dashboard
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+data = pd.DataFrame({
+    'Age': [22, 25, 30, 35, 40, 28, 32, 45],
+    'Salary': [30000, 35000, 40000, 45000, 50000, 37000, 42000, 55000],
+    'Department': ['HR', 'IT', 'IT', 'Finance', 'HR', 'Finance', 'IT', 'HR']
+})
+
+# Dashboard
+plt.figure(figsize=(10, 6))
+
+plt.subplot(1, 2, 1)
+sns.barplot(x='Department', y='Salary', data=data, ci=None)
+plt.title("Average Salary by Department")
+
+plt.subplot(1, 2, 2)
+sns.heatmap(data[['Age', 'Salary']].corr(), annot=True, cmap='coolwarm')
+plt.title("Correlation Heatmap")
+
+plt.tight_layout()
+plt.show()
